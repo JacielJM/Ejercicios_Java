@@ -2,30 +2,41 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class Adivinador {
+	
+	static int randomizer() {
+		Random numero = new Random();
+		int random = numero.nextInt(10) + 1;
+		return random;
+	}
+	
+	static String resultado(int usuario, int objetivo) {
+		String mensaje;
+		if (usuario == 0) {
+			mensaje = "Adivina el número que estoy pensando:";
+		} else if (usuario > objetivo) {
+			mensaje = "El número ingresado es mayor a la respuesta\nIntente nuevamente:";
+		} else if (usuario == objetivo) {
+			mensaje = "Correcto! El número era " + objetivo;
+		} 
+		else {
+			mensaje = "El número ingresado es menor a la respuesta\nIntente nuevamente:";
+		}
+		return mensaje;
+	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		Scanner sc = new Scanner(System.in);
-		Random numero = new Random();
-
-		System.out.println("Adivina el número que estoy pensando:");
-		int random = numero.nextInt(10) + 1;
-		int userGuess = sc.nextInt();
-		int contador = 1;
-
-		// System.out.println("El número random es: "+random);
-
+		int userGuess = 0, contador = 0;
+		int random = randomizer();
+		
 		while (userGuess != random) {
-			if (userGuess > random) {
-				System.out.println("El número ingresado es mayor a la respuesta");
-			} else {
-				System.out.println("El número ingresado es menor a la respuesta");
-			}
-			System.out.println("Intente nuevamente:");
+			System.out.println(resultado(userGuess, random));
 			userGuess = sc.nextInt();
 			contador++;
 		}
-		System.out.println("Correcto! El número era: " + random);
+		
+		System.out.println(resultado(userGuess, random));
 		System.out.println("Le tomó " + contador + " intentos");
 		sc.close();
 	}
