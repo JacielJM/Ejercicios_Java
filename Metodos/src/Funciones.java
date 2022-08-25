@@ -46,6 +46,23 @@ public class Funciones {
 	static String imprimirLongitud(String mensaje) {
 		return "La longitud es de: " + mensaje.length();
 	}
+	
+//	Method Overloading
+	static String error(String error) {
+		String mensaje = "Ha ocurrido un error: " + error;
+		return mensaje;
+	}
+//	Mismo metodo, mas parametros
+	static String error(String error, String warning) {
+		String mensaje = "Ha ocurrido un error: " + error + "\n" + warning;
+		return mensaje;
+	}
+//	Mismo metodo, diferentes parametros
+	static int error(int error) {
+		int mensaje = error;
+		return mensaje;
+	}
+
 
 
 	public static void main(String[] args) {
