@@ -1,28 +1,45 @@
-import java.util.Scanner;
-import java.util.ArrayList;
-public class ComidaFavorita {
 
-	public static void main(String[] args) {
+import java.util.ArrayList;
+import java.util.Scanner;
+public class ComidaFavorita {
+	ArrayList<String> listaComidas;
+	
+	ComidaFavorita() {
+		this.listaComidas = new ArrayList<String>();
+	}
+	
+	void agregarComida() {
 		Scanner sc = new Scanner(System.in);
-		int opcion;
-		String comidas;
-		ArrayList<String> listaComidas = new ArrayList<String>();
+		System.out.println("Ingrese la nueva comida");
+		String comidas=sc.nextLine();
+		listaComidas.add(comidas);
+		System.out.println("Se ha añadido el platillo " +comidas+ " a tu lista");
+		System.out.println(listaComidas+"\n");
+	}
+	
+	void modificarPlatillo() {
+		if(listaComidas.isEmpty()) {
+			System.out.println("Su lista está vacía");
+		} else {
+			Scanner sc = new Scanner(System.in);
+			Scanner ns = new Scanner(System.in);
+			System.out.println("Lista actual");
+			int n = 1;
+			for(String i:listaComidas) {
+				System.out.println(n+" "+i);
+				n++;
+			}
+			System.out.println("Ingrese el numero de comida a modificar");
+			int i = sc.nextInt();
+			System.out.println("Ingrese la nueva comida de la posicion "+i);
+			String comidas = ns.nextLine();
+			listaComidas.set(i-1, comidas);
+			System.out.println("Se ha añadido el platillo " +comidas+ " en "+i);
+			System.out.println(listaComidas+"\n");
+		}
+	}
 		
-		do {
-			System.out.println("Elige una opcion");
-			System.out.println("1 para añadir otra comida");
-			System.out.println("2 para modificar las comidas ingresadas");
-			System.out.println("3 para borrar alguna comida ingresada");
-			System.out.println("4 para salir");
-			opcion = sc.nextInt();
-			
-			switch(opcion) {
-			case 1:
-				System.out.println("Ingrese la nueva comida");
-				comidas=sc.nextLine();
-				listaComidas.add(comidas);
-				System.out.println("Tu lista es "+listaComidas);
-				break;
+			/*
 			case 2:
 				System.out.println("Ingrese el numero de comida a modificar");
 				int i = sc.nextInt()-1;
@@ -40,16 +57,9 @@ public class ComidaFavorita {
 				listaComidas.clear();
 				}
 				System.out.println(listaComidas);
-				break;
-			case 4:
-				System.out.println("Gracias por participar");
-				break;
-			default:
-				System.out.println(opcion +" no es una opción válida");
-			}
-		} while (opcion != 4);
-		
-		sc.close();
+		*/
+	void salir() {
+		System.out.println("Muchas gracias por utilizar nuestros servicios");
 	}
 
 }
