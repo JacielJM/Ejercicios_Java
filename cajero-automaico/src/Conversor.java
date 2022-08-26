@@ -21,6 +21,7 @@ public class Conversor {
 		BigDecimal dolaresBD = euroBD.multiply(tCambioBD);
 		
 		System.out.println(euros + " euros equivalen a " + dolaresBD + " USD");
+		sc.close();
 
 	} // cierre de main
 

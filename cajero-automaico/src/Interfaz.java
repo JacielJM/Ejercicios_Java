@@ -39,6 +39,7 @@ public class Interfaz {
 				cajero.salir();
 			}
 		} while (seleccion == 1 || seleccion == 2 || seleccion == 3 || seleccion == 4);
+		ns.close();
 	} // cierre de main
 
 } // cierre de clase
