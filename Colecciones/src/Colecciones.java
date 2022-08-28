@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Scanner;
 public class Colecciones {
 
@@ -34,7 +36,7 @@ public class Colecciones {
 		System.out.println(meses.length);
 		System.out.println(calificaciones.length);
 		
-		int[] numerosdel1al100 = new int[100];
+		//int[] numerosdel1al100 = new int[100];
 		
 		for (String m:meses) {
 			System.out.println(m);
@@ -100,6 +102,7 @@ public class Colecciones {
 		comidaFavorita.add(comida);
 		
 		System.out.println("Mi comida favorita es "+comidaFavorita);
+		sc.close();
 		
 		//Vamos a crear un menu para preguntarle al usuario su comida favorita
 		
@@ -114,6 +117,7 @@ public class Colecciones {
 				//Read
 				//Update
 				//Delete
+		/*
 		Scanner ns = new Scanner(System.in);
 		System.out.println("Lista de comidas favoritas");
 		String comidas;
@@ -158,16 +162,75 @@ public class Colecciones {
 			default:
 				System.out.println(opcion +" no es una opción válida");
 			}
-		}
+		}*/
 		
 		
 		/*
 		 * Set (conjuntos)
 		 * 
 		 * Define una coleccion que no puede tener elementos duplicados. Dentro de esta interfaz existen distintas implementaciones, una de ellas es HashSet. Sirve para almacenar datos en una tabla hash. Es la implementacion que mejor rendimiento de todas da, pero no garantiza el orden al momento de hacer iteraciones. Debemos definir el tamanio inicial de la tabla porque el tamanio marcara el rendimiento de esta implementacion.
- */
-		
+		 * 
+		 * * Map (mapas)
+	 *
+	 *La interfaz Map asocia claves a valores, y no puede contener claves duplicadas, y cada una de esas claves solo puede tener asociado un valor como maximo. Dentro de los map, existe la implementacion llamada HashMap, la cual almacena las claves en una tabla hash. Es la implementacion que mejor rendimiento tiene de todas, y es imporante definir el tamanio inicial de la tabla ya que este tamanio define el rendimiento de la implementacion.
 
+ */
+		// Create a HashMap object called capitalCities
+	    HashMap<String, String> capitalCities = new HashMap<String, String>();
+
+	    // Add keys and values (Country, City)
+	    capitalCities.put("England", "London");
+	    capitalCities.put("Germany", "Berlin");
+	    capitalCities.put("Norway", "Oslo");
+	    capitalCities.put("USA", "Washington DC");
+	    System.out.println(capitalCities);	
+	    
+	 // ArrayList
+	 			System.out.println("ARRAYLIST");
+	 			ArrayList<String> participantes = new ArrayList<String>(); 
+	 			participantes.add("Felipe");
+	 			participantes.add("Jaciel");
+	 			participantes.add("Edwin");
+	 			participantes.add("Gabriel");
+	 			participantes.add("Fernando");
+	 			participantes.add("Fernando");
+	 			System.out.println(participantes);
+	 			
+	 			
+	 			System.out.println("HASHSET");
+	 			//HashSet (metodo para comprobar si existe un elemento o no)
+	 			HashSet<String> participantes2 = new HashSet<String>();
+	 			participantes2.add("Felipe");
+	 			participantes2.add("Jaciel");
+	 			participantes2.add("Edwin");
+	 			participantes2.add("Gabriel");
+	 			participantes2.add("Fernando");
+	 			System.out.println(participantes2);
+	 			
+	 		    
+	 		    System.out.println("HASHMAP");
+	 			//HashMap
+	 		    HashMap<String, Integer> calificaciones1 = new HashMap<String, Integer>();
+	 		    //metodo put para agregar informacion
+	 		    calificaciones1.put("Felipe", 5);
+	 		    calificaciones1.put("Jaciel", 10);
+	 		    calificaciones1.put("Edwin", 10);
+	 		    calificaciones1.put("Gabriel", 9);
+	 		    calificaciones1.put("Fernando1", 9);
+	 		    calificaciones1.put("Fernando2", 7);
+	 		    calificaciones1.put("Fernando3", 0);
+	 		    System.out.println(calificaciones1);
+	 		    
+	 		   for(String i: calificaciones1.keySet()) {
+	 		    	System.out.println(i);
+	 		    	System.out.println(calificaciones1.get(i).hashCode());
+	 		    }
+	 		   System.out.println("************************************");
+	 		    for(Integer i: calificaciones1.values()) {
+	 		    	System.out.println(i);
+	 		    }
+	 		    
+	 		    
 	} // cierre de main
 
 } // cierre de clase

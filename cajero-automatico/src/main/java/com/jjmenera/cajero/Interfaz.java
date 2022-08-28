@@ -19,6 +19,7 @@ public class Interfaz {
 			System.out.println("	2 para ingresar dinero");
 			System.out.println("	3 para retirar dinero");
 			System.out.println("	4 para consultar sus movimientos");
+			System.out.println("	5 para consultar los terminos y condiciones");
 			System.out.println("Para salir escriba cualquier otro número");
 			
 			seleccion = ns.nextInt();
@@ -36,10 +37,13 @@ public class Interfaz {
 			case 4:
 				cajero.consultarMovimientos();
 				break;
+			case 5:
+				cajero.mostrarTermsCondiciones();
+				break;
 			default:
 				cajero.salir();
 			}
-		} while (seleccion == 1 || seleccion == 2 || seleccion == 3 || seleccion == 4);
+		} while (seleccion == 1 || seleccion == 2 || seleccion == 3 || seleccion == 4 || seleccion == 5);
 		ns.close();
 	} // cierre de main
 

@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
+import com.jjmenera.banco.CuentaAhorro;
 import com.jjmenera.banco.CuentaBancaria;
 import com.jjmenera.mock.GeneradorRdmMovsBancarios;
 
@@ -12,7 +13,7 @@ public class CajeroAutomatico {
 	protected CajeroAutomatico(String identificador, String contraseña) {
 		double cantidadAleatoria = ThreadLocalRandom.current().nextDouble(0, 50000);
 		
-		cActual = new CuentaBancaria("Jaciel Menera", cantidadAleatoria);
+		cActual = new CuentaAhorro("Jaciel Menera", cantidadAleatoria);
 	}
 	
 	protected void mostrarSaldo() {
@@ -46,6 +47,10 @@ public class CajeroAutomatico {
 		for(String movimiento:movs) {
 			System.out.println(movimiento);
 		}
+	}
+	
+	protected void mostrarTermsCondiciones() {
+		cActual.infoTermsCondiciones();
 	}
 	
 	protected void salir() {

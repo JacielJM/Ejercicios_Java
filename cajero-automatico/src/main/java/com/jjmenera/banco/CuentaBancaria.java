@@ -1,9 +1,9 @@
 package com.jjmenera.banco;
 
-public class CuentaBancaria {
+public abstract class CuentaBancaria {
 	private String titular;
 	private TipoDeCuenta tipoDeCuenta;
-	private double saldo;
+	protected double saldo;
 
 	private final double COMISION = 1.2;
 
@@ -23,26 +23,13 @@ public class CuentaBancaria {
 	}
 	
 	public double obtenerSaldo() {
-		return this.saldo;
+		return saldo;
 	}
 	
 	public void sacarDinero(double cantidad) {
 		// código a ejecutar
 		if(cantidad < 0) return;
-		double comision = calcularComision();
 		saldo -= cantidad;
-		saldo -= comision;
-	}
-	
-	private double calcularComision() {
-		switch (tipoDeCuenta) {
-			case AHORRO:
-				return COMISION;
-			case NOMINA:
-				return 0;
-			default:
-				return 0;
-		}
 	}
 
 	public void ingresarDinero(double cantidad) {
@@ -50,4 +37,6 @@ public class CuentaBancaria {
 		if(cantidad < 0) return;
 		saldo += cantidad;
 	}
+	
+	public abstract void infoTermsCondiciones();
 }
