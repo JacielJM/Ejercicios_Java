@@ -1,3 +1,4 @@
+package com.jjmenera.cajero;
 import java.util.Scanner;
 
 public class Interfaz {

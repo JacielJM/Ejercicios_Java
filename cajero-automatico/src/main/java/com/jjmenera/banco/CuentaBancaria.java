@@ -1,30 +1,32 @@
+package com.jjmenera.banco;
 
 public class CuentaBancaria {
-	String titular;
-	TipoDeCuenta tipoDeCuenta;
-	double saldo;
+	private String titular;
+	private TipoDeCuenta tipoDeCuenta;
+	private double saldo;
 
-	final double COMISION = 1.2;
+	private final double COMISION = 1.2;
 
-	CuentaBancaria(String titular, TipoDeCuenta tipo, double saldo) {
+	public CuentaBancaria(String titular, TipoDeCuenta tipo, double saldo) {
 		this.titular = titular;
 		this.tipoDeCuenta = tipo;
 		this.saldo = saldo;
 	}
 
 	//sobrecarga de constructores
-	CuentaBancaria(String titular, double saldo) {
+	public CuentaBancaria(String titular, double saldo) {
 		this(titular, TipoDeCuenta.AHORRO, saldo);
 	}
 
-	CuentaBancaria() {
+	public CuentaBancaria() {
 		this("", TipoDeCuenta.AHORRO, 0); //no recibe args y define uno por default
 	}
 	
-	double obtenerSaldo() {
+	public double obtenerSaldo() {
 		return this.saldo;
 	}
-	void sacarDinero(double cantidad) {
+	
+	public void sacarDinero(double cantidad) {
 		// código a ejecutar
 		if(cantidad < 0) return;
 		double comision = calcularComision();
@@ -32,7 +34,7 @@ public class CuentaBancaria {
 		saldo -= comision;
 	}
 	
-	double calcularComision() {
+	private double calcularComision() {
 		switch (tipoDeCuenta) {
 			case AHORRO:
 				return COMISION;
@@ -43,7 +45,7 @@ public class CuentaBancaria {
 		}
 	}
 
-	void ingresarDinero(double cantidad) {
+	public void ingresarDinero(double cantidad) {
 		// código a ejecutar
 		if(cantidad < 0) return;
 		saldo += cantidad;

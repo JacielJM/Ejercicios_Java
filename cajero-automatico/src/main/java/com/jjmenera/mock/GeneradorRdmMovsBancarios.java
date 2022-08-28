@@ -1,3 +1,4 @@
+package com.jjmenera.mock;
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -9,7 +10,7 @@ public class GeneradorRdmMovsBancarios {
 	private static final String NOMINA = "Ingreso nómina de ";
 	private static final String PAGO_RECIBO = "Pago de recibo de ";
 	
-	ArrayList<String> obtenerMovimientos(int numDeMovimientos, String moneda) {
+	public ArrayList<String> obtenerMovimientos(int numDeMovimientos, String moneda) {
 		ArrayList<String> movimientos = new ArrayList<String>();
 		for (int i = 0; i<numDeMovimientos; i++) {
 			int numDeMovimiento = generarRdmInt(1, 6);

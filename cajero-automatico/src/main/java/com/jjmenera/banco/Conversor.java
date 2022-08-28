@@ -1,3 +1,4 @@
+package com.jjmenera.banco;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
