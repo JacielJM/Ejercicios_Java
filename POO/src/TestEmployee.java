@@ -1,4 +1,7 @@
+import org.generation.nomina.DesarrolladorBackEnd;
+import org.generation.nomina.DesarrolladorFrontEnd;
 import org.generation.nomina.Employee;
+import org.generation.nomina.Supervisor;
 
 public class TestEmployee {
 
@@ -25,6 +28,14 @@ public class TestEmployee {
 		System.out.println("\nSalario de Jaciel festivo");
 		Jaciel.calculateSalary(21, 2);
 		
+		Supervisor Alonso = new Supervisor("Alonso", "Grajeda", 28, "LAGRJGCHHGSYGS", 18000.0, "Mentoria", 500.0);
+		System.out.println(Alonso);
+		
+		DesarrolladorFrontEnd Paulina = new DesarrolladorFrontEnd("Irma", "Meza", 23, "PAU12345XXXX", 40000, "UX", 1400, 2, "Bootstrap");
+		System.out.println(Paulina);
+		
+		DesarrolladorBackEnd Laura = new DesarrolladorBackEnd("Laura", "Sánchez", 24, "LAU12345XXXX", 40000, "UX", 1400, 2, "MongoDB");
+		System.out.println(Laura);
 	}
 
 }
